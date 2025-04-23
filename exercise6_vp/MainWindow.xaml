@@ -7,17 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="300">
     <Grid Margin="10">
-        <DataGrid Name="dgSimple" AutoGenerateColumns="False">
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" RowDetailsVisibilityMode="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTemplateColumn Header="Birthday">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding Birthday}" BorderThickness="0"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Birthday" Binding="{Binding Birthday}"/>
             </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Details}" Margin="10"/>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>  
         </DataGrid>
     </Grid>
 </Window>
